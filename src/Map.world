@@ -1,0 +1,4 @@
+rectangle 0 50 6000 50 false
+rectangle 250 0 50 30 false
+rectangle 600 -150 50 40 false
+rectangle 700 -300 100 100 false
