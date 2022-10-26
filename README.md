@@ -4,8 +4,8 @@ Requirements to run:
 
 Usage:
 From Command line enter 2DRasterizer directory, then enter commands
-gradle build
-java -jar build/libs/2DRasterizer.jar
+-gradle build
+-java -jar build/libs/2DRasterizer.jar
 
 
 Controls:
