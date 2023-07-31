@@ -7,22 +7,29 @@ public class ViewableFactory {
     String fileName;
     ArrayList<Viewable> viewables = new ArrayList<Viewable>();
     GamePanel panel;
+    boolean foundMap;
 
     ViewableFactory(GamePanel panel, String fileName) {
         this.fileName = fileName;
         this.panel = panel;
+        foundMap = false;
 
         openFile();
-        readFile();
-        closeFile();
+        if(foundMap) {
+            readFile();
+            closeFile();
+        }
     }
 
 
     void openFile() {
         try {
             scanner = new Scanner(new File(fileName));
+            foundMap = true;
         } catch(Exception e) {
             System.out.println("Map File not Found");
+            System.out.println("Generating Test Map instead...");
+            generateTestMap();
         }
     }
 
@@ -45,7 +52,7 @@ public class ViewableFactory {
 
     void createViewable(String type, ArrayList<Integer> verticies){
         if(type == "rectangle")
-            System.out.println("yep");
+            System.out.println("generating rectangle");
             viewables.add(new ViewableRect(verticies.get(0), verticies.get(1), verticies.get(2), verticies.get(3), panel));
     }
 
@@ -55,6 +62,15 @@ public class ViewableFactory {
 
     public ArrayList<Viewable> getViewables(){
         return viewables;
+    }
+
+    private void generateTestMap(){
+        viewables.add(new ViewableRect(0, 50, 6000, 50, panel));
+        viewables.add(new ViewableRect(250, 0, 50, 30, panel));
+        viewables.add(new ViewableRect(600, -150, 50, 40, panel));
+        viewables.add(new ViewableRect(700, -300, 100, 100, panel));
+        viewables.add(new ViewableRect(2000, -1500, 100, 100, panel));
+
     }
 }
 
