@@ -17,3 +17,7 @@ Controls:
 WASD for movement
 SPACEBAR to jump
 Up/Down Arrows to look up and down
+
+
+
+*Disclaimer I made this after my first year of programming, I am a much better programmer now. I also never intended to release this, so code formatting is horrible.
