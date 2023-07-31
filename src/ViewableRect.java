@@ -54,7 +54,7 @@ public class ViewableRect extends Viewable {
     }
 
     public void draw(Graphics2D gtd, int direction) {
-        double viewAngle = ((double)direction/panel.getHeight())*90+panel.player.getViewDirection()-45;// Calculates the angle of the current pixel
+        double viewAngle = ((double)direction/panel.getHeight())*panel.player.fov+panel.player.getViewDirection()-panel.player.fov/2;// Calculates the angle of the current pixel
         if(viewAngle > 360){
             viewAngle -= 360;
         } else if(viewAngle < 0){
